@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System;
 
-namespace scheduler.Domain.Events
+namespace Scheduler.Domain.Events
 {
     public class PatientRequestRejected: INotification
     {

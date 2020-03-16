@@ -1,8 +1,8 @@
 ﻿using Autofac;
-using scheduler.Domain.Model.PatientAggregate;
-using scheduler.Infrastructure.Repositories;
+using Scheduler.Domain.Model.PatientAggregate;
+using Scheduler.Infrastructure.Repositories;
 
-namespace scheduler.Modules
+namespace Scheduler.Modules
 {
     public class ApplicationModule
         : Autofac.Module

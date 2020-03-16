@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace scheduler.Domain.Events
+namespace Scheduler.Domain.Events
 {
     public class PatientRequestConfirmed: INotification
     {

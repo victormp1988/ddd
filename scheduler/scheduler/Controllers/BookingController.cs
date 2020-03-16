@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using scheduler.Comands;
+using Scheduler.Comands;
 
-namespace scheduler.Controllers
+namespace Scheduler.Controllers
 {
     [ApiController]
     [Route("[controller]")]

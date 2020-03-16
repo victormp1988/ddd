@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using scheduler.Domain.Exceptions;
+using Scheduler.Domain.Exceptions;
 
-namespace scheduler.Behaviors
+namespace Scheduler.Behaviors
 {
     public class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {

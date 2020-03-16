@@ -1,7 +1,7 @@
 ﻿using Ical.Net.CalendarComponents;
-using scheduler.Domain.Model.Base;
+using Scheduler.Domain.Model.Base;
 
-namespace scheduler.Domain.Model
+namespace Scheduler.Domain.Model
 {
     public class Event : Entity
     {

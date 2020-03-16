@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "scheduler": {
+    "Scheduler": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "booking",

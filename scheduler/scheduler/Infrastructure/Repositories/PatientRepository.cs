@@ -1,7 +1,7 @@
-﻿using scheduler.Domain.Model;
-using scheduler.Domain.Model.PatientAggregate;
+﻿using Scheduler.Domain.Model;
+using Scheduler.Domain.Model.PatientAggregate;
 
-namespace scheduler.Infrastructure.Repositories
+namespace Scheduler.Infrastructure.Repositories
 {
     public class PatientRepository : IPatientRepository
     {

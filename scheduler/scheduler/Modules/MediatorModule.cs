@@ -1,13 +1,13 @@
 ﻿using Autofac;
 using FluentValidation;
 using MediatR;
-using scheduler.Behaviors;
-using scheduler.Comands;
-using scheduler.EventHandlers;
+using Scheduler.Behaviors;
+using Scheduler.Comands;
+using Scheduler.EventHandlers;
 using System.Linq;
 using System.Reflection;
 
-namespace scheduler.Modules
+namespace Scheduler.Modules
 {
         public class MediatorModule : Autofac.Module
         {

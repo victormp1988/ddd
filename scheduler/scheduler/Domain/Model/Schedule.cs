@@ -1,8 +1,8 @@
-﻿using scheduler.Domain.Model.Base;
+﻿using Scheduler.Domain.Model.Base;
 using System;
 using System.Collections.Generic;
 
-namespace scheduler.Domain.Model
+namespace Scheduler.Domain.Model
 {
     public class Schedule
     {

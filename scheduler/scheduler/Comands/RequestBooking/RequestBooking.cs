@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System;
 
-namespace scheduler.Comands
+namespace Scheduler.Comands
 {
     public class RequestBooking : IRequest <int>
     {

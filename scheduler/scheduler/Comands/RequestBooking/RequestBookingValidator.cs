@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using System;
 
-namespace scheduler.Comands
+namespace Scheduler.Comands
 {
     public class RequestBookingValidator : AbstractValidator<RequestBooking>
     {

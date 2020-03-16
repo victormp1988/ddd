@@ -1,10 +1,10 @@
 ﻿using MediatR;
-using scheduler.Domain.Events;
+using Scheduler.Domain.Events;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace scheduler.EventHandlers
+namespace Scheduler.EventHandlers
 {
     public class PatientRequestConfirmedHandler : INotificationHandler<PatientRequestConfirmed>
     {

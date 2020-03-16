@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 
-namespace scheduler.Domain.Model.Base
+namespace Scheduler.Domain.Model.Base
 {
     public abstract class Entity
     {
-        int? _requestedHashCode;
-        int _Id;
+        private int? _requestedHashCode;
+        private int _Id;
+
         public virtual int Id
         {
             get
@@ -18,6 +19,15 @@ namespace scheduler.Domain.Model.Base
             {
                 _Id = value;
             }
+        }
+
+        public Entity()
+        {
+        }
+
+        public Entity(int id)
+        {
+            Id = id;
         }
 
         private List<INotification> _domainEvents;
@@ -74,8 +84,8 @@ namespace scheduler.Domain.Model.Base
             }
             else
                 return base.GetHashCode();
-
         }
+
         public static bool operator ==(Entity left, Entity right)
         {
             if (Object.Equals(left, null))

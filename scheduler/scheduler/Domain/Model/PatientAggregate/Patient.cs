@@ -1,21 +1,19 @@
-﻿using scheduler.Domain.Model.Base;
+﻿using Scheduler.Domain.Model.Base;
 using System;
 
-namespace scheduler.Domain.Model.PatientAggregate
+namespace Scheduler.Domain.Model.PatientAggregate
 {
     public class Patient : Entity
     {
         private readonly Schedule schedule;
 
-        public Patient(int id , Schedule schedule)
+        public Patient(int id, Schedule schedule) : base(id)
         {
-            Id = id;
             this.schedule = schedule;
         }
 
-        public void RequestTime(DateTimeOffset dateFrom, DateTimeOffset dateTo)
+        public void TrySchedule(DateTimeOffset dateFrom, DateTimeOffset dateTo)
         {
-
         }
     }
 }

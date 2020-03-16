@@ -6,10 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
-using scheduler.Comands;
-using scheduler.Modules;
+using Scheduler.Comands;
+using Scheduler.Modules;
 
-namespace scheduler
+namespace Scheduler
 {
     public class Startup
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace scheduler.Domain.Exceptions
+namespace Scheduler.Domain.Exceptions
 {
     public class ScheduleDomainException : Exception
     {
