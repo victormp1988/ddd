@@ -1,12 +1,11 @@
 ﻿using MediatR;
 using System;
-using System.Collections.Generic;
 
 namespace scheduler.Comands
 {
     public class RequestBooking : IRequest
     {
-        public PatientRequest PatientRequest { get; }
+        public PatientRequest PatientRequest { get; set; }
     }
 
     public class PatientRequest
