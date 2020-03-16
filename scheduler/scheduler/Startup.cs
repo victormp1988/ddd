@@ -1,10 +1,12 @@
 using Autofac;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
+using scheduler.Comands;
 using scheduler.Modules;
 
 namespace scheduler
@@ -23,6 +25,7 @@ namespace scheduler
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc()
+                    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<RequestBookingValidator>())
                     .AddNewtonsoftJson(options =>
                             options.SerializerSettings.ContractResolver =
                                                 new CamelCasePropertyNamesContractResolver());

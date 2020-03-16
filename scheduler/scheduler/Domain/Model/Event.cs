@@ -1,16 +1,18 @@
-﻿using System;
+﻿using Ical.Net.CalendarComponents;
+using scheduler.Domain.Model.Base;
 
 namespace scheduler.Domain.Model
 {
-    public class Event
+    public class Event : Entity
     {
-        private readonly DateTimeOffset _dateFrom;
-        private readonly DateTimeOffset _dateTo;
+        public int BookingId { get; }
 
-        public Event(DateTimeOffset dateFrom, DateTimeOffset dateTo)
+        public CalendarEvent CalendarEvent { get; }
+
+        public Event(int bookingId, CalendarEvent calendarEvent)
         {
-            _dateFrom = dateFrom;
-            _dateTo = dateTo;
+            BookingId = bookingId;
+            CalendarEvent = calendarEvent;
         }
     }
 }

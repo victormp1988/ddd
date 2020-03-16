@@ -1,8 +1,8 @@
 ﻿using scheduler.Domain.Model.PatientAggregate;
 
-namespace scheduler.Domain.Model
+namespace scheduler.Domain.Model.PatientAggregate
 {
-    interface IPatientRepository
+    public interface IPatientRepository
     {
         Patient GetPatient(int patientId);
     }

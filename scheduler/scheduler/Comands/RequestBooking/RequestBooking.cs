@@ -3,7 +3,7 @@ using System;
 
 namespace scheduler.Comands
 {
-    public class RequestBooking : IRequest
+    public class RequestBooking : IRequest <int>
     {
         public PatientRequest PatientRequest { get; set; }
     }
@@ -12,8 +12,8 @@ namespace scheduler.Comands
     {
         public int PatientId { get; set; }
 
-        public DateTimeOffset dateFrom { get; set; }
+        public DateTimeOffset DateFrom { get; set; }
 
-        public DateTimeOffset dateTo { get; set; }
+        public DateTimeOffset DateTo { get; set; }
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace scheduler.EventHandlers
 {
-    public class PatientRequestedHandler : INotificationHandler<PatientRequested>
+    public class PatientRequestConfirmedHandler : INotificationHandler<PatientRequestConfirmed>
     {
-        public Task Handle(PatientRequested notification, CancellationToken cancellationToken)
+        public Task Handle(PatientRequestConfirmed notification, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

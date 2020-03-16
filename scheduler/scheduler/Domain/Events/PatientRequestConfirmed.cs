@@ -2,7 +2,7 @@
 
 namespace scheduler.Domain.Events
 {
-    public class PatientRequested: INotification
+    public class PatientRequestConfirmed: INotification
     {
     }
 }

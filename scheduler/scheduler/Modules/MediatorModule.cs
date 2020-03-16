@@ -21,7 +21,7 @@ namespace scheduler.Modules
                     .AsClosedTypesOf(typeof(IRequestHandler<,>));
 
                 // Register the DomainEventHandler classes (they implement INotificationHandler<>) in assembly holding the Domain Events
-                builder.RegisterAssemblyTypes(typeof(PatientRequestedHandler).GetTypeInfo().Assembly)
+                builder.RegisterAssemblyTypes(typeof(PatientRequestConfirmedHandler).GetTypeInfo().Assembly)
                     .AsClosedTypesOf(typeof(INotificationHandler<>));
 
                 // Register the Command's Validators (Validators based on FluentValidation library)
