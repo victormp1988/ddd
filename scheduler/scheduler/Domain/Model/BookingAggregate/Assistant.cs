@@ -4,9 +4,8 @@ namespace Scheduler.Domain.Model.BookingAggregate
 {
     public class Assistant : Entity
     {
-        public Assistant()
+        public Assistant(int id) : base(id)
         {
-
         }
     }
 }

@@ -1,20 +1,27 @@
-﻿using Scheduler.Domain.Model.Base;
+﻿using Scheduler.Domain.Exceptions;
+using Scheduler.Domain.Model.Base;
+using System.Collections.Generic;
 
 namespace Scheduler.Domain.Model.BookingAggregate
 {
-    public class Surgeon: Entity
+    public class Surgeon : Entity
     {
-        public Surgeon(int id):base(id)
+        private readonly List<Assistant> _assistants;
+
+        public Surgeon(int id) : base(id)
         {
         }
-
-        public void Request()
+        
+        public Assistant AddAssistant(int assistantId)
         {
+            var assistant = new Assistant(assistantId);
 
-        }
+            if (_assistants.Contains(assistant))
+            {
+                throw new ScheduleDomainException("Assistant already assigned to the surgeon.");
+            }
 
-        public void AddAssistant(int assistantId) 
-        { 
+            return assistant;
         }
     }
 }

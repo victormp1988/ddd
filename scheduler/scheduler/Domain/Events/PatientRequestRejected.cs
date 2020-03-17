@@ -5,10 +5,10 @@ namespace Scheduler.Domain.Events
 {
     public class PatientRequestRejected: INotification
     {
-        public int PatientId { get; set; }
+        public int PatientId { get; }
 
-        public DateTimeOffset RequestedDateFrom { get; set; }
+        public DateTimeOffset RequestedDateFrom { get; }
 
-        public DateTimeOffset RequestedDateTo { get; set; }
+        public DateTimeOffset RequestedDateTo { get; }
     }
 }
