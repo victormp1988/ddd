@@ -3,7 +3,7 @@ using System;
 
 namespace Scheduler.Domain.Events
 {
-    public class PatientRequestRejected: INotification
+    public class PatientScheduleRequestRejected: INotification
     {
         public int PatientId { get; }
 

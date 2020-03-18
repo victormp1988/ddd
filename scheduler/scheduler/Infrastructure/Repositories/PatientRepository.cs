@@ -1,5 +1,4 @@
-﻿using Scheduler.Domain.Model;
-using Scheduler.Domain.Model.PatientAggregate;
+﻿using Scheduler.Domain.Model.PatientAggregate;
 
 namespace Scheduler.Infrastructure.Repositories
 {

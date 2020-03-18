@@ -3,17 +3,17 @@ using System;
 
 namespace Scheduler.Domain.Events
 {
-    public class PatientRequested: INotification
+    public class PersonnelScheduleRequested: INotification
     {
-        public int PatientId { get; }
+        public int PersonnelId { get; }
 
         public DateTimeOffset RequestedDateFrom { get; }
 
         public DateTimeOffset RequestedDateTo { get; }
 
-        public PatientRequested(int patientId, DateTimeOffset requestedDateFrom, DateTimeOffset requestedDateTo)
+        public PersonnelScheduleRequested(int personnelId, DateTimeOffset requestedDateFrom, DateTimeOffset requestedDateTo)
         {
-            PatientId = patientId;
+            PersonnelId = personnelId;
             RequestedDateFrom = requestedDateFrom;
             RequestedDateTo = requestedDateTo;
         }

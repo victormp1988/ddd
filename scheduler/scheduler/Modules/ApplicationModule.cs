@@ -17,7 +17,7 @@ namespace Scheduler.Modules
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<PatientRepository>()
-                .As<IPatientRepository>()
+                .As<IPersonnelRepository>()
                 .InstancePerLifetimeScope();
         }
     }

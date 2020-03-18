@@ -20,6 +20,7 @@ namespace Scheduler.Domain.Model.BookingAggregate
             _patientId = patientId;
             _dateFrom = dateFrom;
             _dateTo = dateTo;
+            _surgeons = new List<Surgeon>();
         }
 
         public Surgeon AssignSurgeon(int surgeonId)
@@ -48,8 +49,8 @@ namespace Scheduler.Domain.Model.BookingAggregate
 
         public void Request()
         {
-            AddDomainEvent(new PatientRequested(this._patientId, _dateFrom, _dateTo));
-            _surgeons.ForEach((surgeon) => AddDomainEvent(new PersonnelRequested(this._patientId, _dateFrom, _dateTo)));
+            AddDomainEvent(new PatientScheduleRequested(_patientId, _dateFrom, _dateTo));
+            _surgeons.ForEach((surgeon) => AddDomainEvent(new PersonnelScheduleRequested(_patientId, _dateFrom, _dateTo)));
         }
     }
 }

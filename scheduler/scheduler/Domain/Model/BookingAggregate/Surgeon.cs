@@ -8,10 +8,13 @@ namespace Scheduler.Domain.Model.BookingAggregate
     {
         private readonly List<Assistant> _assistants;
 
+        public IReadOnlyCollection<Assistant> Assistants => _assistants;
+
         public Surgeon(int id) : base(id)
         {
+            _assistants = new List<Assistant>();
         }
-        
+
         public Assistant AddAssistant(int assistantId)
         {
             var assistant = new Assistant(assistantId);
