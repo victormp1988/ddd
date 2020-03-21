@@ -2,9 +2,9 @@
 
 namespace Scheduler.Domain.Model.BookingAggregate
 {
-    public class Patient : Entity
+    public class Procedure : Entity
     {
-        public Patient(int id) : base(id)
+        public Procedure(int id) : base(id)
         {
         }
     }

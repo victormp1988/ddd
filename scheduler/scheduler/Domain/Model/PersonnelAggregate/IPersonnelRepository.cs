@@ -2,6 +2,6 @@
 {
     public interface IPersonnelRepository
     {
-        Personnel GetPersonnel(int patientId);
+        Personnel GetPersonnel(int personnelId);
     }
 }

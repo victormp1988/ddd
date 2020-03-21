@@ -1,15 +1,26 @@
 ﻿using MediatR;
 using Scheduler.Domain.Events;
+using Scheduler.Domain.Model.PatientAggregate;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Scheduler.EventHandlers
 {
-    public class PatientRequestConfirmedHandler : INotificationHandler<PatientScheduleRequestConfirmed>
+    public class PatientRequestConfirmedHandler : INotificationHandler<PatientScheduleRequested>
     {
-        public Task Handle(PatientScheduleRequestConfirmed notification, CancellationToken cancellationToken)
+        private readonly IPatientRepository _patientRepository;
+        public PatientRequestConfirmedHandler(IPatientRepository patientRepository)
         {
+            _patientRepository = patientRepository;
+        }
+
+        public Task Handle(PatientScheduleRequested notification, CancellationToken cancellationToken)
+        {
+            var patient = _patientRepository.Get(notification.PatientId);
+
+            patient.Schedule(notification.RequestedDateFrom, notification.RequestedDateTo);
+
             throw new NotImplementedException();
         }
     }

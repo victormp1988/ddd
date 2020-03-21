@@ -2,6 +2,6 @@
 {
     public interface IPatientRepository
     {
-        Patient GetPatient(int patientId);
+        Patient Get(int patientId);
     }
 }

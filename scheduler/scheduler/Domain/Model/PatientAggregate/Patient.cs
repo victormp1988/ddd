@@ -1,19 +1,28 @@
-﻿using Scheduler.Domain.Model.Base;
+﻿using Ical.Net;
+using Ical.Net.DataTypes;
+using Scheduler.Domain.Exceptions;
+using Scheduler.Domain.Model.Base;
 using System;
 
 namespace Scheduler.Domain.Model.PatientAggregate
 {
-    public class Patient : Entity
+    public class Patient : Entity, IAggregateRoot
     {
-        private readonly Schedule schedule;
+        private readonly Calendar _calendar;
 
-        public Patient(int id, Schedule schedule) : base(id)
+        public Patient(int id, Calendar calendar) : base(id)
         {
-            this.schedule = schedule;
+            _calendar = calendar;
         }
 
-        public void TrySchedule(DateTimeOffset dateFrom, DateTimeOffset dateTo)
+        public void Schedule(DateTimeOffset dateFrom, DateTimeOffset dateTo)
         {
+            if (dateFrom >= dateTo)
+            {
+                throw new ScheduleDomainException($"Could not schedule patient {Id}. DateTo must be greater than DateFrom.");
+            }
+
+            var occurrences = _calendar.GetOccurrences(new CalDateTime(dateFrom.UtcDateTime), new CalDateTime(dateTo.UtcDateTime));
         }
     }
 }

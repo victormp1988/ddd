@@ -8,6 +8,7 @@ namespace Scheduler.Comands
         public RequestBookingValidator()
         {
             RuleFor(request => request.PatientRequest).NotNull().WithMessage("Patient information is required.");
+            RuleFor(request => request.SurgeonRequests).NotNull().NotEmpty().WithMessage("Surgeons information is required.");
             RuleFor(request => request.PatientRequest).SetValidator(new PatientRequestValidator());
         }
     }

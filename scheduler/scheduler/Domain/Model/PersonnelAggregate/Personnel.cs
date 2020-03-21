@@ -1,18 +1,19 @@
-﻿using Scheduler.Domain.Model.Base;
+﻿using Ical.Net;
+using Scheduler.Domain.Model.Base;
 using System;
 
 namespace Scheduler.Domain.Model.PatientAggregate
 {
-    public class Personnel : Entity
+    public class Personnel : Entity, IAggregateRoot
     {
-        private readonly Schedule schedule;
+        private readonly Calendar _calendar;
 
-        public Personnel(int id, Schedule schedule) : base(id)
+        public Personnel(int id, Calendar calendar) : base(id)
         {
-            this.schedule = schedule;
+            this._calendar = calendar;
         }
 
-        public void TrySchedule(DateTimeOffset dateFrom, DateTimeOffset dateTo)
+        public void Schedule(DateTimeOffset dateFrom, DateTimeOffset dateTo)
         {
         }
     }
