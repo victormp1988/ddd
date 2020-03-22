@@ -2,7 +2,7 @@
 using Scheduler.Domain.Model.Base;
 using System;
 
-namespace Scheduler.Domain.Model.PatientAggregate
+namespace Scheduler.Domain.Model.PersonnelAggregate
 {
     public class Personnel : Entity, IAggregateRoot
     {

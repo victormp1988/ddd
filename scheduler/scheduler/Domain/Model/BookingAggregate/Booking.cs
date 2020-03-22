@@ -78,7 +78,7 @@ namespace Scheduler.Domain.Model.BookingAggregate
                 throw new ScheduleDomainException($"Could not request booking. Patient not assigned.");
             }
 
-            if (_surgeons.Any())
+            if (!_surgeons.Any())
             {
                 throw new ScheduleDomainException($"Could not request booking. There is not surgeon not assigned.");
             }

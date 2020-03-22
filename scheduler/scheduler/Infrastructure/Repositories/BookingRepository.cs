@@ -1,26 +1,22 @@
-﻿using MediatR;
+﻿using Scheduler.Domain;
 using Scheduler.Domain.Model.BookingAggregate;
-using System.Linq;
 
 namespace Scheduler.Infrastructure.Repositories
 {
     public class BookingRepository : IBookingRepository
     {
-        private readonly IMediator _mediator;
+        private readonly SchedulerContext _scheduleContext;
 
-        public BookingRepository(IMediator mediator)
+        public BookingRepository(SchedulerContext scheduleContext)
         {
-            _mediator = mediator;
+            _scheduleContext = scheduleContext;
         }
+
+        public IUnitOfWork UnitOfWork => _scheduleContext;
 
         public void Add(Booking booking)
         {
-            // This would be move to the SaveEntitesAsync DBcontext's method
-            var domainEvents = booking.DomainEvents.ToList();
-            booking.ClearDomainEvents();
-
-            foreach (var domainEvent in domainEvents)
-                _mediator.Publish(domainEvent);
+            _scheduleContext.Bookings.Add(booking);
         }
     }
 }

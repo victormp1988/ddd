@@ -5,7 +5,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Scheduler.EventHandlers
+namespace Scheduler.API.EventHandlers
 {
     public class PatientRequestConfirmedHandler : INotificationHandler<PatientScheduleRequested>
     {

@@ -1,13 +1,13 @@
 ﻿using Autofac;
 using FluentValidation;
 using MediatR;
-using Scheduler.Behaviors;
-using Scheduler.Comands;
-using Scheduler.EventHandlers;
+using Scheduler.API.Behaviors;
+using Scheduler.API.Comands;
+using Scheduler.API.EventHandlers;
 using System.Linq;
 using System.Reflection;
 
-namespace Scheduler.Modules
+namespace Scheduler.API.Modules
 {
         public class MediatorModule : Autofac.Module
         {
@@ -38,6 +38,7 @@ namespace Scheduler.Modules
                 });
 
                 builder.RegisterGeneric(typeof(ValidatorBehavior<,>)).As(typeof(IPipelineBehavior<,>));
-            }
+            builder.RegisterGeneric(typeof(LoggingBehavior<,>)).As(typeof(IPipelineBehavior<,>));
+        }
         }
     }

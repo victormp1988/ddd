@@ -6,7 +6,7 @@ using MediatR;
 using Microsoft.Extensions.Logging;
 using Scheduler.Domain.Exceptions;
 
-namespace Scheduler.Behaviors
+namespace Scheduler.API.Behaviors
 {
     public class ValidatorBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Scheduler.Comands
+namespace Scheduler.API.Comands
 {
     public class RequestBooking : IRequest <int>
     {

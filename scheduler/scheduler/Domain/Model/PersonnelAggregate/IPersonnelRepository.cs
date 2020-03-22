@@ -1,6 +1,6 @@
-﻿namespace Scheduler.Domain.Model.PatientAggregate
+﻿namespace Scheduler.Domain.Model.PersonnelAggregate
 {
-    public interface IPersonnelRepository
+    public interface IPersonnelRepository : IRepository<Personnel>
     {
         Personnel GetPersonnel(int personnelId);
     }

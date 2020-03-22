@@ -1,4 +1,4 @@
-﻿namespace Scheduler.Domain.Model.Base
+﻿namespace Scheduler.Domain
 {
     public interface IAggregateRoot
     {

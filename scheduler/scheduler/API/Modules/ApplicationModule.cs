@@ -1,11 +1,13 @@
 ﻿using Autofac;
+using Scheduler.Domain.Model.BookingAggregate;
 using Scheduler.Domain.Model.PatientAggregate;
+using Scheduler.Infrastructure;
 using Scheduler.Infrastructure.Repositories;
 
-namespace Scheduler.Modules
+namespace Scheduler.API.Modules
 {
     public class ApplicationModule
-        : Autofac.Module
+        : Module
     {
         public string QueriesConnectionString { get; }
 
@@ -16,8 +18,15 @@ namespace Scheduler.Modules
 
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType<SchedulerContext>()
+                .SingleInstance();
+
             builder.RegisterType<PatientRepository>()
-                .As<IPersonnelRepository>()
+                .As<IPatientRepository>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<BookingRepository>()
+                .As<IBookingRepository>()
                 .InstancePerLifetimeScope();
         }
     }

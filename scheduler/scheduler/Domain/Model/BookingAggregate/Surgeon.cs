@@ -15,6 +15,7 @@ namespace Scheduler.Domain.Model.BookingAggregate
         public Surgeon(int id) : base(id)
         {
             _assistants = new List<Assistant>();
+            _procedures = new List<Procedure>();
         }
 
         public Assistant AssignAssistant(int assistantId)
@@ -25,6 +26,8 @@ namespace Scheduler.Domain.Model.BookingAggregate
             {
                 throw new ScheduleDomainException("Assistant already assigned to the surgeon.");
             }
+
+            _assistants.Add(assistant);
 
             return assistant;
         }
@@ -37,6 +40,8 @@ namespace Scheduler.Domain.Model.BookingAggregate
             {
                 throw new ScheduleDomainException("Procedure already assigned to the surgeon.");
             }
+
+            _procedures.Add(procedure);
 
             return procedure;
         }

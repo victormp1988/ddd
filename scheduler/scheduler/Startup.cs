@@ -6,8 +6,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json.Serialization;
-using Scheduler.Comands;
-using Scheduler.Modules;
+using Scheduler.API.Comands;
+using Scheduler.API.Infrastructure.Filters;
+using Scheduler.API.Modules;
 
 namespace Scheduler
 {
@@ -29,7 +30,10 @@ namespace Scheduler
                     .AddNewtonsoftJson(options =>
                             options.SerializerSettings.ContractResolver =
                                                 new CamelCasePropertyNamesContractResolver());
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.Filters.Add(typeof(HttpGlobalExceptionFilter));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
